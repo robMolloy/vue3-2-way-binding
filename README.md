@@ -1,26 +1,21 @@
-# Quasar App (vue3-2-way-binding)
+### For 2-way binding
 
-A Quasar Framework app
+Use ref, not reactive, as
 
-## Install the dependencies
-```bash
-npm install
+```
+  @update:modelValue="(x) => var=x"
+  :value="x"
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
+equals
+
+```
+  v-model="x"
 ```
 
-### Lint the files
-```bash
-npm run lint
-```
+but does not equal
 
-### Build the app for production
-```bash
-quasar build
 ```
-
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+  @update:modelValue="(x) => reass9(var, x)"
+  :value="x"
+```
